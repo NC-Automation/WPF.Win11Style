@@ -2,11 +2,19 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Color x:Key="DarkBackgroundColor">#FF707070</Color>
     <Color x:Key="BackgroundColor">#FAFAFA</Color>
-    <!--<Color x:Key="LightDisabledBackgroundColor">white</Color>-->
     <Color x:Key="ForegroundColor">#FF212121</Color>
     <Color x:Key="WindowBackgroundColor">#FFFFFF</Color>
 
+    <Color x:Key="HighlightColor">#C0DDEB</Color>
+    <Color x:Key="HotColor">green</Color>
+
+    <!--<Color x:Key="LightBackgroundColor">#2E2E2E</Color>
+    <Color x:Key="DisabledBackgroundColor">#424242</Color>
+    <Color x:Key="LightDisabledBackgroundColor">#666666</Color>-->
+
+
     <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}"/>
+    <SolidColorBrush x:Key="MouseOverForegroundBrush" Color="{StaticResource ForegroundColor}"/>
     <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{StaticResource WindowBackgroundColor}"/>
 
 
@@ -94,5 +102,16 @@
     <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Background" Color="#5426A0DA"/>
     <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Border" Color="#FF26A0DA"/>
 
+    <!--Menu-->
+    <SolidColorBrush x:Key="DisabledMenuForeground" Color="#858585"/>
+    <SolidColorBrush x:Key="MenuBackground" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="MenuItemSelectionFill" Color="{StaticResource HighlightColor}"/>
+    <SolidColorBrush x:Key="MenuItemSelectionBorder" Color="#FF26A0DA"/>
+    <SolidColorBrush x:Key="SubMenuBackgroundBrush" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="MenuItemPressedFill" Color="{StaticResource HighlightColor}"/>
+    <SolidColorBrush x:Key="SubMenuBorderBrush" Color="#A5A5A5"/>
+    <SolidColorBrush x:Key="SubMenuRepeatButtonBrush" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="SubMenuHoverRepeatButtonBrush" Color="#EEEEEE"/>
+    <SolidColorBrush x:Key="MenuSeparatorBrush" Color="#BBBBBB"/>
 
 </ResourceDictionary>
