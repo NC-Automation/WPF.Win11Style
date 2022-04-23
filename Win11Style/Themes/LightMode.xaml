@@ -7,6 +7,8 @@
 
     <Color x:Key="HighlightColor">#C0DDEB</Color>
     <Color x:Key="HotColor">green</Color>
+    <Color x:Key="ControlBorderColor">#D5DFE5</Color>
+    <Color x:Key="ControlBackgroundColor">#FFFFFF</Color>
 
     <!--<Color x:Key="LightBackgroundColor">#2E2E2E</Color>
     <Color x:Key="DisabledBackgroundColor">#424242</Color>
@@ -16,6 +18,8 @@
     <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}"/>
     <SolidColorBrush x:Key="MouseOverForegroundBrush" Color="{StaticResource ForegroundColor}"/>
     <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{StaticResource WindowBackgroundColor}"/>
+    <SolidColorBrush x:Key="ControlBorder" Color="{StaticResource ControlBorderColor}" />
+    <SolidColorBrush x:Key="ControlBackground" Color="{StaticResource ControlBackgroundColor}" />
 
 
 
@@ -33,12 +37,11 @@
 
     <!--button-->
     <Color x:Key="Button.BackgroundColor">#FFFFFF</Color>
-    <Color x:Key="Button.BorderColor">#AAAAAA</Color>
     <Color x:Key="Button.MouseOver.Background">#E1EFFA</Color>
     <Color x:Key="Button.MouseOver.Border">#3B85C9</Color>
     <SolidColorBrush x:Key="ButtonForeground" Color="{StaticResource ForegroundColor}"/>
     <SolidColorBrush x:Key="Button.Background" Color="#FFFFFF"/>
-    <SolidColorBrush x:Key="ButtonBorder" Color="#AAAAAA"/>
+    <SolidColorBrush x:Key="ButtonBorder" Color="{StaticResource ControlBorderColor}"/>
     <SolidColorBrush x:Key="Button.IsDefault.Border" Color="#3B85C9"/>
     <SolidColorBrush x:Key="PressedButtonBackground" Color="#EEEEEE"/>
     <SolidColorBrush x:Key="DisabledButtonBackground" Color="#EEEEEE"/>
@@ -55,11 +58,12 @@
     <SolidColorBrush x:Key="ScrollBarSelectedThumb" Color="#A6A6A6"/>
 
     <!--TextBox-->
-    <SolidColorBrush x:Key="TextBoxBorder" Color="#ABADB3" />
+    <SolidColorBrush x:Key="TextBoxBorder" Color="{StaticResource ControlBorderColor}" />
     <SolidColorBrush x:Key="TextBoxBackground" Color="#FFFFFF" />
     <SolidColorBrush x:Key="TextBoxDisabledForeground" Color="#6D6D6D" />
     <SolidColorBrush x:Key="TextBoxDisabledBackground" Color="#FFFFFF" />
     <SolidColorBrush x:Key="TextBoxFocusBorder" Color="#3B85C9"/>
+    <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
     <SolidColorBrush x:Key="InactiveSelectionHighlightBrush" Color="#335C85"/>
 
     <!--ComboBox-->
@@ -68,7 +72,7 @@
         <GradientStop Color="#FFF0F0F0" Offset="0.0"/>
         <GradientStop Color="#FFE5E5E5" Offset="1.0"/>
     </LinearGradientBrush>
-    <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#FFACACAC"/>
+    <SolidColorBrush x:Key="ComboBox.Static.Border" Color="{StaticResource ControlBorderColor}"/>
     <SolidColorBrush x:Key="ComboBox.Static.Glyph" Color="#FF606060"/>
     <LinearGradientBrush x:Key="ComboBox.MouseOver.Background" EndPoint="0,1" StartPoint="0,0">
         <GradientStop Color="#FFECF4FC" Offset="0.0"/>
@@ -113,5 +117,81 @@
     <SolidColorBrush x:Key="SubMenuRepeatButtonBrush" Color="#F0F0F0"/>
     <SolidColorBrush x:Key="SubMenuHoverRepeatButtonBrush" Color="#EEEEEE"/>
     <SolidColorBrush x:Key="MenuSeparatorBrush" Color="#BBBBBB"/>
+
+    <!--RadioButton-->
+    <SolidColorBrush x:Key="RadioButton.Static.Background" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="RadioButton.Static.Border" Color="#FFBBBBBB"/>
+    <SolidColorBrush x:Key="RadioButton.Static.Glyph" Color="#FFF9F9F9"/>
+    <SolidColorBrush x:Key="RadioButton.Checked.Background" Color="#007ACC"/>
+    <SolidColorBrush x:Key="RadioButton.Checked.Border" Color="#2E92D4"/>
+    <SolidColorBrush x:Key="RadioButton.MouseOver.Background" Color="#FFF3F9FF"/>
+    <SolidColorBrush x:Key="RadioButton.MouseOver.Border" Color="#FF5593FF"/>
+    <SolidColorBrush x:Key="RadioButton.MouseOver.Glyph" Color="#FFE9E9E9"/>
+    <SolidColorBrush x:Key="RadioButton.Pressed.Background" Color="#FFD9ECFF"/>
+    <SolidColorBrush x:Key="RadioButton.Pressed.Border" Color="#FF3C77DD"/>
+    <SolidColorBrush x:Key="RadioButton.Pressed.Glyph" Color="#FF212121"/>
+    <SolidColorBrush x:Key="RadioButton.Disabled.Background" Color="#FFE6E6E6"/>
+    <SolidColorBrush x:Key="RadioButton.Disabled.Border" Color="#FFBCBCBC"/>
+    <SolidColorBrush x:Key="RadioButton.Disabled.Glyph" Color="#FFE6E6E6"/>
+
+    <!--ProgressBar-->
+    <SolidColorBrush x:Key="ProgressBar.Progress" Color="#FF06B025"/>
+    <SolidColorBrush x:Key="ProgressBar.Background" Color="#E6E6E6"/>
+    <SolidColorBrush x:Key="ProgressBar.Border" Color="#FFBCBCBC"/>
+
+    <!--TabControl-->
+    <SolidColorBrush x:Key="TabItem.Selected.Background" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#ACACAC"/>
+    <LinearGradientBrush x:Key="TabItem.Static.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#F0F0F0" Offset="0.0"/>
+        <GradientStop Color="#E5E5E5" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="TabItem.Static.Border" Color="#ACACAC"/>
+    <LinearGradientBrush x:Key="TabItem.MouseOver.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#ECF4FC" Offset="0.0"/>
+        <GradientStop Color="#DCECFC" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#7EB4EA"/>
+    <SolidColorBrush x:Key="TabItem.Disabled.Background" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="TabItem.Disabled.Border" Color="#D9D9D9"/>
+
+    <!--Expander-->
+    <SolidColorBrush x:Key="Expander.Static.Circle.Stroke" Color="#FF333333"/>
+    <SolidColorBrush x:Key="Expander.Static.Circle.Fill" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="Expander.Static.Arrow.Stroke" Color="#FF333333"/>
+    <SolidColorBrush x:Key="Expander.MouseOver.Circle.Stroke" Color="#FF5593FF"/>
+    <SolidColorBrush x:Key="Expander.MouseOver.Circle.Fill" Color="#FFF3F9FF"/>
+    <SolidColorBrush x:Key="Expander.MouseOver.Arrow.Stroke" Color="#FF000000"/>
+    <SolidColorBrush x:Key="Expander.Pressed.Circle.Stroke" Color="#FF3C77DD"/>
+    <SolidColorBrush x:Key="Expander.Pressed.Circle.Fill" Color="#FFD9ECFF"/>
+    <SolidColorBrush x:Key="Expander.Pressed.Arrow.Stroke" Color="#FF000000"/>
+    <SolidColorBrush x:Key="Expander.Disabled.Circle.Stroke" Color="#FFBCBCBC"/>
+    <SolidColorBrush x:Key="Expander.Disabled.Circle.Fill" Color="#FFE6E6E6"/>
+    <SolidColorBrush x:Key="Expander.Disabled.Arrow.Stroke" Color="#FF707070"/>
+
+    <!--ToolTip-->
+    <SolidColorBrush x:Key="ToolTip.Background" Color="#F1F2F7" />
+    <SolidColorBrush x:Key="ToolTip.Border" Color="#808080" />
+    <SolidColorBrush x:Key="ToolTip.Foreground" Color="#EFEFEF" />
+
+    <!--DatePicker / Calendar-->
+    <SolidColorBrush x:Key="DatePicker.Border" Color="{StaticResource ControlBorderColor}" />
+    <SolidColorBrush x:Key="DatePicker.Foreground" Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.Background" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.Foreground" Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.Header.Background" Color="#E9EDF2" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.MouseOver.Foreground" Color="#FF73A9D8" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Foreground" Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Highlight.Foreground" Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Highlight.Background" Color="#FFBADDE9" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Selected.Foreground" Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Selected.Background" Color="#FFBADDE9" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Today.Foreground" Color="White" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Today.Background" Color="#FFAAAAAA" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Inactive.ForegroundColor" Color="#FF777777" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Blackout" Color="#FF000000" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.Selected.Button" Color="#FFBADDE9" />
+    <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Focus.Border" Color="#FF45D6FA" />
+
 
 </ResourceDictionary>
