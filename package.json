@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/NC-Automation/WPF.Win11Style/issues"
   },
-  "homepage": "https://github.com/NC-Automation/WPF.Win11Style#readme"
+  "homepage": "https://github.com/NC-Automation/WPF.Win11Style#readme",
+  "publishConfig": {
+    "@NC-Automation:registry": "https://npm.pkg.github.com"
+  }
 }
