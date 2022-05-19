@@ -1,5 +1,32 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <LinearGradientBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3C86C9" Offset="0" />
+        <GradientStop Color="#FF1000E8" Offset="1" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrush}" Color="#000000"/>
+
+    <LinearGradientBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" EndPoint="0.5,1"
+                StartPoint="0.5,0">
+        <GradientStop Color="#FF84BCEE" Offset="0" />
+        <GradientStop Color="#FF3F93ED" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="HeaderGradient">
+        <GradientStop Color="#FFA2A2A2" Offset="0.017" />
+        <GradientStop Color="#FF555353" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="SelectedHeaderGradient">
+        <GradientStop Color="#FF5E7A98" Offset="0.024" />
+        <GradientStop Color="#FF233C56" Offset="1" />
+    </LinearGradientBrush>
+    <Style TargetType="Image">
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
+    </Style>
+
+
+
+
     <Color x:Key="DarkBackgroundColor">#FF707070</Color>
     <Color x:Key="BackgroundColor">#FAFAFA</Color>
     <Color x:Key="ForegroundColor">#FF212121</Color>
@@ -7,13 +34,8 @@
 
     <Color x:Key="HighlightColor">#C0DDEB</Color>
     <Color x:Key="HotColor">green</Color>
-    <Color x:Key="ControlBorderColor">#D5DFE5</Color>
+    <Color x:Key="ControlBorderColor">#ACACAC</Color>
     <Color x:Key="ControlBackgroundColor">#FFFFFF</Color>
-
-    <!--<Color x:Key="LightBackgroundColor">#2E2E2E</Color>
-    <Color x:Key="DisabledBackgroundColor">#424242</Color>
-    <Color x:Key="LightDisabledBackgroundColor">#666666</Color>-->
-
 
     <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}"/>
     <SolidColorBrush x:Key="MouseOverForegroundBrush" Color="{StaticResource ForegroundColor}"/>
@@ -172,7 +194,7 @@
     <!--ToolTip-->
     <SolidColorBrush x:Key="ToolTip.Background" Color="#F1F2F7" />
     <SolidColorBrush x:Key="ToolTip.Border" Color="#808080" />
-    <SolidColorBrush x:Key="ToolTip.Foreground" Color="#EFEFEF" />
+    <SolidColorBrush x:Key="ToolTip.Foreground" Color="#424242" />
 
     <!--DatePicker / Calendar-->
     <SolidColorBrush x:Key="DatePicker.Border" Color="{StaticResource ControlBorderColor}" />

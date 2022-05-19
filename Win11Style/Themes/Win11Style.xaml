@@ -21,7 +21,7 @@
     </Style>
 
     <!--checkbox-->
-    <Style x:Key="EmptyCheckBoxFocusVisual">
+    <Style x:Key="EmptyCheckBoxFocusVisual" BasedOn="{StaticResource {x:Type CheckBox}}">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -49,8 +49,8 @@
     </Style>
     <Style TargetType="{x:Type CheckBox}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"></Setter>
-        <Setter Property="Background" Value="{StaticResource CheckBoxFillNormal}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource CheckBoxStroke}"/>
+        <Setter Property="Background" Value="{StaticResource CheckBox.Unchecked.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CheckBox.Unchecked.Border}"/>
         <Setter Property="FocusVisualStyle" Value="{StaticResource EmptyCheckBoxFocusVisual}"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -80,15 +80,21 @@
                             <Setter Property="Background" TargetName="CheckBoxBorder" Value="{StaticResource CheckBox.Disabled.Background}"/>
                             <Setter TargetName="CheckMark" Property="Fill" Value="{StaticResource CheckBox.Disabled.Glyph}"/>
                         </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" TargetName="CheckBoxBorder" Value="{StaticResource CheckBoxMouseOver.Border}"/>
-                            <Setter Property="Background" TargetName="CheckBoxBorder" Value="{StaticResource CheckBoxMouseOver.Background}"/>
-                        </Trigger>
                         <Trigger Property="IsChecked" Value="false">
                             <Setter TargetName="CheckMark" Property="Opacity" Value="0"/>
-                            <Setter Property="BorderBrush" TargetName="CheckBoxBorder" Value="{StaticResource CheckBox.Unchecked.Border}"/>
-                            <Setter Property="Background" TargetName="CheckBoxBorder" Value="{StaticResource CheckBox.Unchecked.Background}"/>
                         </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="BorderBrush" TargetName="CheckBoxBorder" Value="{StaticResource CheckBoxStroke}"/>
+                            <Setter Property="Background" TargetName="CheckBoxBorder" Value="{StaticResource CheckBoxFillNormal}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True"/>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BorderBrush" TargetName="CheckBoxBorder" Value="{StaticResource CheckBoxMouseOver.Border}"/>
+                            <Setter Property="Background" TargetName="CheckBoxBorder" Value="{StaticResource CheckBoxMouseOver.Background}"/>
+                        </MultiTrigger>
                         <Trigger Property="IsChecked" Value="{x:Null}">
                             <Setter TargetName="CheckMark" Property="Opacity" Value="0"/>
                             <Setter TargetName="InDeterminate" Property="Opacity" Value="1"/>
@@ -119,7 +125,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="{x:Type Button}" >
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource Button.Background}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ButtonBorder}"/>
@@ -612,7 +618,7 @@
     </Style>
 
     <!--TextBox-->
-    <Style TargetType="{x:Type TextBox}">
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
         <Setter Property="Background" Value="{StaticResource TextBoxBackground}"/>
         <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
@@ -671,7 +677,7 @@
     </Style>
 
     <!--RichTextBox-->
-    <Style TargetType="{x:Type RichTextBox}">
+    <Style TargetType="{x:Type RichTextBox}" BasedOn="{StaticResource {x:Type RichTextBox}}">
         <Setter Property="MinWidth" Value="10"/>
         <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
         <Setter Property="Background" Value="{DynamicResource TextBoxBackground}"/>
@@ -726,7 +732,7 @@
     </Style>
 
     <!--PasswordBox-->
-    <Style TargetType="{x:Type PasswordBox}">
+    <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource {x:Type PasswordBox}}">
         <Setter Property="PasswordChar" Value="●"/>
         <Setter Property="Background" Value="{DynamicResource TextBoxBackground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorder}"/>
@@ -822,7 +828,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
-                    <Border x:Name="templateRoot" Background="{StaticResource ComboBox.Static.Background}" 
+                    <Border x:Name="templateRoot" Background="{TemplateBinding Background}" 
                                 CornerRadius="3"
                                 BorderBrush="{StaticResource ComboBox.Static.Border}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
                         <Border x:Name="splitBorder" BorderBrush="Transparent" CornerRadius="0,2,2,0" HorizontalAlignment="Right" Margin="0" SnapsToDevicePixels="true" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
@@ -930,7 +936,7 @@
                             Style="{StaticResource ComboBoxToggleButton}"/>
             <Border x:Name="border" Background="{StaticResource ComboBox.Edit.Background}" BorderThickness="0"
                         Margin="{TemplateBinding BorderThickness}" CornerRadius="3,0,0,3">
-                <TextBox x:Name="PART_EditableTextBox"
+                <TextBox x:Name="PART_EditableTextBox" Background="{StaticResource ComboBox.Edit.Background}"
                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
                              IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}" 
                              Margin="{TemplateBinding Padding}" Style="{StaticResource ComboBoxEditableTextBox}" 
@@ -1026,7 +1032,7 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    <Style TargetType="{x:Type ComboBox}">
+    <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource ComboBox.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ComboBox.Static.Border}"/>
@@ -1126,6 +1132,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style TargetType="{x:Type ComboBoxItem}" BasedOn="{StaticResource ComboBoxItemContainerStyle}"/>
 
     <!--Menu-->
     <Style TargetType="{x:Type Menu}">
@@ -1569,7 +1576,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="TextBlock">
+    <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
     </Style>
 
@@ -1752,6 +1759,15 @@
     <!--TabControl-->
     <Style TargetType="{x:Type TabControl}">
         <Style.Resources>
+            <Style x:Key="FocusVisual">
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
             <Style TargetType="{x:Type TabItem}">
                 <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
                 <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
@@ -2687,7 +2703,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="{x:Type DatePickerTextBox}">
+    <Style TargetType="{x:Type DatePickerTextBox}" BasedOn="{StaticResource {x:Type DatePickerTextBox}}">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
         <Setter Property="Background" Value="{DynamicResource TextBoxBackground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource DatePicker.Border}"/>
@@ -2731,7 +2747,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="{x:Type DatePicker}">
+    <Style TargetType="{x:Type DatePicker}" BasedOn="{StaticResource {x:Type DatePicker}}">
         <Setter Property="Foreground" Value="{DynamicResource DatePicker.Foreground}"/>
         <Setter Property="IsTodayHighlighted" Value="True"/>
         <Setter Property="SelectedDateFormat" Value="Short"/>
@@ -2813,10 +2829,10 @@
     </Style>
 
     <!--DataGrid-->
-    <Style TargetType="{x:Type DataGridCell}">
+    <Style TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource {x:Type DataGridCell}}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridCell}">
@@ -2861,14 +2877,15 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="{x:Type DataGridColumnHeader}">
+    <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
         <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
                     <Grid>
                         <Border x:Name="Border" Background="{DynamicResource DataGrid.Header.Background}" BorderThickness="1"
-                                    Padding="4,4" Visibility="Visible" Margin="0" BorderBrush="{DynamicResource DataGrid.Header.Border}">
+                                    Padding="4,3" Visibility="Visible" Margin="0" BorderBrush="{DynamicResource DataGrid.Header.Border}">
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                                   RecognizesAccessKey="True"
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
@@ -2924,7 +2941,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="{x:Type DataGridRowHeader}">
+    <Style TargetType="{x:Type DataGridRowHeader}" BasedOn="{StaticResource {x:Type DataGridRowHeader}}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridRowHeader}">
@@ -2953,7 +2970,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="{x:Type DataGridRow}">
+    <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource {x:Type DataGridRow}}">
         <Setter Property="Background" Value="{DynamicResource DataGridRow.Background}"/>
         <Setter Property="SnapsToDevicePixels" Value="true"/>
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
@@ -2991,7 +3008,8 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
+    <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" 
+           TargetType="{x:Type Button}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -3016,7 +3034,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="{x:Type DataGrid}">
+    <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource {x:Type DataGrid}}">
         <Setter Property="Background" Value="{DynamicResource ControlBackground}"/>
         <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource DataGrid.BorderBrush}"/>
@@ -3028,7 +3046,6 @@
         <Setter Property="RowStyle" Value="{DynamicResource {x:Type DataGridRow}}"/>
         <Setter Property="RowHeaderStyle" Value="{DynamicResource {x:Type DataGridRowHeader}}"/>
         <Setter Property="ColumnHeaderStyle" Value="{DynamicResource {x:Type DataGridColumnHeader}}"/>
-        <Setter Property="CellStyle" Value="{DynamicResource {x:Type DataGridCell}}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGrid}">
@@ -3040,7 +3057,7 @@
                                 <VisualBrush Visual="{Binding ElementName=gridBorderMask}"/>
                             </Grid.OpacityMask>
                             <Border Name="gridBorderMask" Background="{TemplateBinding Background}" CornerRadius="5" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
-                            <ScrollViewer x:Name="DG_ScrollViewer" Focusable="false" Background="Transparent">
+                            <ScrollViewer x:Name="DG_ScrollViewer" Focusable="false" Background="#01FFFFFF">
                                 <ScrollViewer.Template>
                                     <ControlTemplate TargetType="{x:Type ScrollViewer}">
                                         <Grid Background="Transparent" RenderOptions.ClearTypeHint="Enabled">
@@ -3054,7 +3071,6 @@
                                                 <RowDefinition Height="*"/>
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
-                                            <!--<Border Name="gridBorder" Background="ForestGreen" CornerRadius="15" Grid.ColumnSpan="3" Grid.RowSpan="3"/>-->
                                             <Button Command="{x:Static DataGrid.SelectAllCommand}" Focusable="false" Style="{DynamicResource {ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}}" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.All}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
                                             <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.Column="1" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
                                             <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" Grid.Row="1"/>
@@ -3329,7 +3345,7 @@
         <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
         <Setter Property="Template" Value="{DynamicResource SliderHorizontal}"/>
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Vertical">
@@ -3423,7 +3439,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-
 
 </ResourceDictionary>
