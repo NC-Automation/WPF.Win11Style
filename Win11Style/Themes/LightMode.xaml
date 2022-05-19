@@ -193,5 +193,79 @@
     <SolidColorBrush x:Key="DatePicker.Calendar.Selected.Button" Color="#FFBADDE9" />
     <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Focus.Border" Color="#FF45D6FA" />
 
+    <!--DataGrid-->
+    <SolidColorBrush x:Key="DataGridRow.Background" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="DataGrid.FocusBorderBrushKey" Color="#FF000000"/>
+    <SolidColorBrush x:Key="DataGrid.BorderBrush" Color="#FF688CAF"/>
+    <SolidColorBrush x:Key="DataGrid.Header.Border" Color="#E4E4E4"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.Background" EndPoint="0,1" StartPoint="0,0.0">
+        <GradientStop Color="#FFFFFF" Offset="0.33"/>
+        <GradientStop Color="#F6F7F9" Offset="0.4"/>
+        <GradientStop Color="#F2F3F5" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DataGrid.Header.Hover.Border" Color="#69BBE3"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.Hover.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#E3F7FF" Offset="0.33"/>
+        <GradientStop Color="#BDEDFF" Offset="0.4"/>
+        <GradientStop Color="#B8E8FB" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DataGrid.Header.Sorted.Border" Color="#96D9F9"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.Sorted.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#F2F9FC" Offset="0.33"/>
+        <GradientStop Color="#E0F1F9" Offset="0.4"/>
+        <GradientStop Color="#D9ECF6" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DataGrid.Header.SortGlyph.Border" Color="#7295A9"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.SortGlyph.Background" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#81ABC4" Offset="0"/>
+        <GradientStop Color="#DDDDDD" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DataGrid.Header.Pressed.Border" Color="#7A9EB1"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.Pressed.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#BCE4F9" Offset="0.33"/>
+        <GradientStop Color="#8DD6F7" Offset="0.4"/>
+        <GradientStop Color="#8BD2F5" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="DataGrid.RowHeader.Background" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#FFFFFF" Offset="0.33"/>
+        <GradientStop Color="#F6F7F9" Offset="0.4"/>
+        <GradientStop Color="#F2F3F5" Offset="1.0"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="DataGrid.RowHeader.Hover.Background" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#E3F7FF" Offset="0.33"/>
+        <GradientStop Color="#BDEDFF" Offset="0.4"/>
+        <GradientStop Color="#B8E8FB" Offset="1.0"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="DataGrid.RowHeader.Selected.Background" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#F2F9FC" Offset="0.33"/>
+        <GradientStop Color="#E0F1F9" Offset="0.4"/>
+        <GradientStop Color="#D9ECF6" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <!--Slider-->
+    <SolidColorBrush x:Key="SliderThumb.Static.Background" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="SliderThumb.Static.Border" Color="#FFACACAC"/>
+    <SolidColorBrush x:Key="SliderThumb.MouseOver.Background" Color="#FFDCECFC"/>
+    <SolidColorBrush x:Key="SliderThumb.MouseOver.Border" Color="#FF7Eb4EA"/>
+    <SolidColorBrush x:Key="SliderThumb.Pressed.Background" Color="#FFDAECFC"/>
+    <SolidColorBrush x:Key="SliderThumb.Pressed.Border" Color="#FF569DE5"/>
+    <SolidColorBrush x:Key="SliderThumb.Disabled.Background" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="SliderThumb.Disabled.Border" Color="#FFD9D9D9"/>
+    <SolidColorBrush x:Key="SliderThumb.Track.Background" Color="#FFE7EAEA"/>
+    <SolidColorBrush x:Key="SliderThumb.Track.Border" Color="#FFD6D6D6"/>
+
+    <!--ListBox-->
+    <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3"/>
+    <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9"/>
+    <SolidColorBrush x:Key="ListBox.Disabled.Text" Color="#FF6D6D6D"/>
+    <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#1F26A0DA"/>
+    <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#a826A0Da"/>
+    <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#3D26A0DA"/>
+    <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#FF26A0DA"/>
+    <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#3DDADADA"/>
+    <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA"/>
 
 </ResourceDictionary>

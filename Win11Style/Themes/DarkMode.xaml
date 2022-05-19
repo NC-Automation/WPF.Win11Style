@@ -76,52 +76,6 @@
     <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
     <SolidColorBrush x:Key="InactiveSelectionHighlightBrush" Color="#1F4F75"/>
 
-    <!--<SolidColorBrush x:Key="CornerBorder" Color="{StaticResource DarkBackgroundColor}"/>-->
-
-
-
-    <!--<SolidColorBrush x:Key="Expander.Background" Color="{StaticResource LightBackgroundColor}"/>
-    <SolidColorBrush x:Key="Expander.MouseOver.Arrow.Stroke" Color="{StaticResource ForegroundColor}"/>
-    <SolidColorBrush x:Key="Expander.Disabled.Arrow.Stroke" Color="{StaticResource LightDisabledBackgroundColor}"/>
-    <SolidColorBrush x:Key="Expander.Static.Arrow.Stroke" Color="#AAAAAA"/>-->
-
-
-    <!--<SolidColorBrush x:Key="RadioButtonMouseOverStroke" Color="{StaticResource ForegroundColor}"/>
-    <SolidColorBrush x:Key="RadioButtonDisabledStroke" Color="{StaticResource DisabledBackgroundColor}"/>
-    <SolidColorBrush x:Key="RadioButtonDisabledForeground" Color="#939393"/>
-    <SolidColorBrush x:Key="RadioButtonStroke" Color="{StaticResource DarkBackgroundColor}"/>
-    <SolidColorBrush x:Key="RadioButtonForeground" Color="{StaticResource ForegroundColor}"/>
-    <SolidColorBrush x:Key="RadioButtonBackground" Color="{StaticResource LightDisabledBackgroundColor}"/>
-
-    <SolidColorBrush x:Key="ListBorder" Color="{StaticResource DarkBackgroundColor}"/>
-    <SolidColorBrush x:Key="ListBackground" Color="{StaticResource DarkBackgroundColor}"/>
-    <SolidColorBrush x:Key="SelectedListItem" Color="{StaticResource HighlightColor}"/>
-    <SolidColorBrush x:Key="SelectedListItemForeground" Color="{StaticResource DarkBackgroundColor}"/>
-    <SolidColorBrush x:Key="MouseOverListItem" Color="#4A4A4A"/>
-
-    <SolidColorBrush x:Key="TreeViewBackground" Color="{StaticResource DarkBackgroundColor}"/>
-    <SolidColorBrush x:Key="TreeViewDisabledForeground" Color="{StaticResource LightDisabledBackgroundColor}"/>
-
-    <SolidColorBrush x:Key="DisabledMenuForeground" Color="#656565"/>
-    <SolidColorBrush x:Key="MenuBackground" Color="#3A3A3A"/>
-    <SolidColorBrush x:Key="MenuItemSelectionFill" Color="{StaticResource HighlightColor}"/>
-    <SolidColorBrush x:Key="SubMenuBackgroundBrush" Color="#3A3A3A"/>
-    <SolidColorBrush x:Key="MenuItemPressedFill" Color="{StaticResource HighlightColor}"/>
-    <SolidColorBrush x:Key="SubMenuBorderBrush" Color="{StaticResource LightBackgroundColor}"/>
-    <SolidColorBrush x:Key="SubMenuRepeatButtonBrush" Color="{StaticResource HotColor}"/>
-    <SolidColorBrush x:Key="SubMenuHoverRepeatButtonBrush" Color="#7F7F7F"/>
-    <SolidColorBrush x:Key="MenuSeparatorBrush" Color="#4C4C4C"/>
-
-    <SolidColorBrush x:Key="DataGridBackgroundBrush" Color="{StaticResource DarkBackgroundColor}"/>
-    <SolidColorBrush x:Key="DataGridHeaderBackgroundBrush" Color="{StaticResource DarkBackgroundColor}"/>
-    <SolidColorBrush x:Key="DataGridHeaderMouseOverBrush" Color="#AAAAAA"/>
-    <SolidColorBrush x:Key="DataGridHeaderBorderBrush" Color="{StaticResource DisabledBackgroundColor}"/>
-    <SolidColorBrush x:Key="DataGridRowBorderBrush" Color="{StaticResource DisabledBackgroundColor}"/>
-    <SolidColorBrush x:Key="DataGridRowBackgroundBrush" Color="{StaticResource DarkBackgroundColor}"/>
-    <SolidColorBrush x:Key="DataGridRowSelectedBrush" Color="{StaticResource HighlightColor}"/>
-    <SolidColorBrush x:Key="GridLinesBrush" Color="Transparent"/>
-    <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="Red"/>-->
-
     <!-- Necessary for Blend designer for UserControls -->
     <Style TargetType="{x:Type UserControl}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
@@ -241,5 +195,80 @@
     <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Blackout" Color="#FFFFFF" />
     <SolidColorBrush x:Key="DatePicker.Calendar.Selected.Button" Color="#555555" />
     <SolidColorBrush x:Key="DatePicker.Calendar.DayButton.Focus.Border" Color="#3B85C9" />
+
+    <!--DataGrid-->
+    <SolidColorBrush x:Key="DataGridRow.Background" Color="#2B2B2B"/>
+    <SolidColorBrush x:Key="DataGrid.FocusBorderBrushKey" Color="#FF000000"/>
+    <SolidColorBrush x:Key="DataGrid.BorderBrush" Color="{DynamicResource ControlBorderColor}"/>
+    <SolidColorBrush x:Key="DataGrid.Header.Border" Color="#666666"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.Background" EndPoint="0,1" StartPoint="0,0.0">
+        <GradientStop Color="#373737" Offset="0.33"/>
+        <GradientStop Color="#202020" Offset="0.4"/>
+        <GradientStop Color="#101010" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DataGrid.Header.Hover.Border" Color="#999999"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.Hover.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#505050" Offset="0.33"/>
+        <GradientStop Color="#404040" Offset="0.4"/>
+        <GradientStop Color="#303030" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DataGrid.Header.Sorted.Border" Color="#787878"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.Sorted.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#454545" Offset="0.33"/>
+        <GradientStop Color="#373737" Offset="0.4"/>
+        <GradientStop Color="#2D2D2D" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DataGrid.Header.SortGlyph.Border" Color="#858585"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.SortGlyph.Background" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#555555" Offset="0"/>
+        <GradientStop Color="#FFFFFF" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DataGrid.Header.Pressed.Border" Color="#252525"/>
+    <LinearGradientBrush x:Key="DataGrid.Header.Pressed.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#858585" Offset="0.33"/>
+        <GradientStop Color="#707070" Offset="0.4"/>
+        <GradientStop Color="#666666" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="DataGrid.RowHeader.Background" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#373737" Offset="0.33"/>
+        <GradientStop Color="#202020" Offset="0.4"/>
+        <GradientStop Color="#101010" Offset="1.0"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="DataGrid.RowHeader.Hover.Background" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#505050" Offset="0.33"/>
+        <GradientStop Color="#404040" Offset="0.4"/>
+        <GradientStop Color="#303030" Offset="1.0"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="DataGrid.RowHeader.Selected.Background" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#585858" Offset="0.33"/>
+        <GradientStop Color="#404040" Offset="0.4"/>
+        <GradientStop Color="#373737" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <!--Slider-->
+    <SolidColorBrush x:Key="SliderThumb.Static.Background" Color="{DynamicResource ControlBackgroundColor}"/>
+    <SolidColorBrush x:Key="SliderThumb.Static.Border" Color="{DynamicResource ControlBorderColor}"/>
+    <SolidColorBrush x:Key="SliderThumb.MouseOver.Background" Color="#FF555555"/>
+    <SolidColorBrush x:Key="SliderThumb.MouseOver.Border" Color="#FF7Eb4EA"/>
+    <SolidColorBrush x:Key="SliderThumb.Pressed.Background" Color="#FF323232"/>
+    <SolidColorBrush x:Key="SliderThumb.Pressed.Border" Color="#FF569DE5"/>
+    <SolidColorBrush x:Key="SliderThumb.Disabled.Background" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="SliderThumb.Disabled.Border" Color="#FFD9D9D9"/>
+    <SolidColorBrush x:Key="SliderThumb.Track.Background" Color="{DynamicResource ControlBackgroundColor}"/>
+    <SolidColorBrush x:Key="SliderThumb.Track.Border" Color="#777777"/>
+
+    <!--ListBox-->
+    <SolidColorBrush x:Key="ListBox.Static.Background" Color="{StaticResource WindowBackgroundColor}"/>
+    <SolidColorBrush x:Key="ListBox.Static.Border" Color="{StaticResource ControlBorderColor}"/>
+    <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#383838"/>
+    <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#4B4B4B"/>
+    <SolidColorBrush x:Key="ListBox.Disabled.Text" Color="#808080"/>
+    <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#1FFFFFFF"/>
+    <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#A8646464"/>
+    <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#2EAAAAAA"/>
+    <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#666666"/>
+    <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#3D707070"/>
+    <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#454545"/>
 
 </ResourceDictionary>
