@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
 	<metadata>
-		<id>NCAutomation.Controls</id>
+		<id>NCAutomation.Win11Style</id>
 		<version>1.0.0</version>
 		<title>owner</title>
 		<authors>Neil Burkholder</authors>

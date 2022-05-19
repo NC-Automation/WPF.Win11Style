@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("Win11Style")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("NC Automation")]
 [assembly: AssemblyProduct("Win11Style")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
