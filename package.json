@@ -1,0 +1,19 @@
+{
+  "name": "win11style",
+  "version": "1.0.0",
+  "description": "Win11Style",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NC-Automation/WPF.Win11Style.git"
+  },
+  "author": "Neil Burkholder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NC-Automation/WPF.Win11Style/issues"
+  },
+  "homepage": "https://github.com/NC-Automation/WPF.Win11Style#readme"
+}
