@@ -1,22 +1,66 @@
-﻿<Window x:Class="Win11Style.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Win11Style"
-        mc:Ignorable="d" Style="{DynamicResource WindowStyle}"
-        Title="MainWindow" Height="450" Width="800">
-    <!--<Window.Style>
-        <Style TargetType="local:MainWindow" BasedOn="{StaticResource {x:Type Window}}">
-            <Setter Property="Background" Value="Black"/>
+﻿<mw:ModernWindow x:Class="Win11Style.Showcase.MainWindow"
+                 xmlns:mw="clr-namespace:Win11Style.WindowChrome;assembly=Win11Style"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:th="clr-namespace:Win11Style.Themes;assembly=Win11Style"
+                 xmlns:local="clr-namespace:Win11Style.Showcase"
+                 mc:Ignorable="d" 
+                 NonActiveGlowColor="#3F3F3F"
+                 WindowState="Normal"
+                 WindowStyle="SingleBorderWindow"
+                 TitleBarHeight="25"
+                 CenterTitle="{Binding ElementName=CompactTitleBar, Path=IsChecked}"                 
+                 Title="Modern Windows 11 Styles" Height="450" Width="800">
+    <mw:ModernWindow.Style>
+        <Style TargetType="mw:ModernWindow">
+            <Setter Property="TitleBarBackground" Value="#FFFFFF"/>
+            <Setter Property="TitleBarForeground" Value="#000000"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=DarkMode, Path=IsChecked}" Value="true">
+                    <Setter Property="TitleBarBackground" Value="#202020"/>
+                    <Setter Property="TitleBarForeground" Value="#FFFFFF"/>
+                    <Setter Property="ButtonHoverColor" Value="#525252"/>
+                    <Setter Property="ButtonPressedColor" Value="#3E3E40"/>
+                </DataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=DarkMode, Path=IsChecked}" Value="false"/>
+                        <Condition Binding="{Binding ElementName=Win11Style, Path=IsChecked}" Value="false"/>
+                        <Condition Binding="{Binding ElementName=CompactTitleBar, Path=IsChecked}" Value="false"/>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsActive}" Value="true"/>
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="ActiveTitleBarMatchGlow" Value="True"/>
+                    <Setter Property="TitleBarForeground" Value="#FFFFFF"/>
+                    <Setter Property="ButtonHoverColor" Value="#10FFFFFF"/>
+                    <Setter Property="ButtonPressedColor" Value="#09FFFFFF"/>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=DarkMode, Path=IsChecked}" Value="false"/>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsActive}" Value="false"/>
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="TitleBarForeground" Value="#999999"/>
+                </MultiDataTrigger>
+            </Style.Triggers>
         </Style>
-
-    </Window.Style>-->
-    <Window.Resources>
-
-    </Window.Resources>
+    </mw:ModernWindow.Style>
     <Grid>
-        <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top">
+        <Menu VerticalAlignment="Top" th:DynamicStyle.BaseStyle="{DynamicResource {x:Type Menu}}">
+            <th:DynamicStyle.DerivedStyle>
+                <Style TargetType="Menu">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=CompactTitleBar, Path=IsChecked}" Value="true">
+                            <Setter Property="Margin" Value="26,-22,0,0"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource AncestorType=mw:ModernWindow, Mode=FindAncestor}, Path=TitleBarBackground}"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </th:DynamicStyle.DerivedStyle>
             <MenuItem Header="File">
                 <MenuItem Header="New" InputGestureText="Ctrl+N"/>
                 <MenuItem Header="Open">
@@ -40,6 +84,11 @@
                 <MenuItem Header="Exit"/>
             </MenuItem>
             <MenuItem Header="Edit"/>
+            <MenuItem Header="Appearance">
+                <MenuItem Header="Dark Mode" IsCheckable="True" IsChecked="{Binding ElementName=DarkMode, Path=IsChecked}"/>
+                <MenuItem Header="Win 11 Style" IsCheckable="True" IsChecked="{Binding ElementName=Win11Style, Path=IsChecked}"/>
+                <MenuItem x:Name="CompactTitleBar" Header="Compact Titlebar" IsCheckable="True"/>
+            </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="Help"/>
                 <MenuItem Header="Help"/>
@@ -47,56 +96,23 @@
                 <MenuItem Header="Help" IsEnabled="False"/>
                 <MenuItem Header="Help"/>
                 <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
-                <MenuItem Header="Help"/>
             </MenuItem>
 
         </Menu>
-        <Grid Margin="0,18,0,0">
+        <Grid>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Margin" Value="0,0,0,0"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=CompactTitleBar, Path=IsChecked}" Value="false">
+                            <Setter Property="Margin" Value="0,18,0,0"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
             <CheckBox x:Name="DarkMode" Content="Dark Mode" HorizontalAlignment="Left" Margin="10,10,0,0"  VerticalAlignment="Top" Checked="DarkMode_Checked" Unchecked="DarkMode_UnChecked" IsChecked="False"/>
             <CheckBox x:Name="Win11Style" Content="Win 11 Style" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Checked="Win11_Checked" Unchecked="Win11_Unchecked" IsChecked="True"/>
-            <CheckBox Content="Test" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Checked="Test_Checked" Unchecked="Test_Unchecked"/>
+            <CheckBox Content="Test" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" IsChecked="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=IsActive, Mode=OneWay}"/>
             <CheckBox Content="Disabled" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" IsEnabled="False"/>
             <CheckBox Content="Disabled Checked" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="True"/>
             <CheckBox Content="Disabled Checked" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" IsEnabled="True" IsChecked="{x:Null}"/>
@@ -225,4 +241,4 @@
 
         </Grid>
     </Grid>
-</Window>
+</mw:ModernWindow>

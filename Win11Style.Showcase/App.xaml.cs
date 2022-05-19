@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Win11Style
+namespace Win11Style.Showcase
 {
     /// <summary>
     /// Interaction logic for App.xaml

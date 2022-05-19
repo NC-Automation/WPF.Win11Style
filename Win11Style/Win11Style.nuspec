@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+	<metadata>
+		<id>NCAutomation.Controls</id>
+		<version>1.0.0</version>
+		<title>owner</title>
+		<authors>Neil Burkholder</authors>
+		<owners>Neil Burkholder</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="expression">MIT</license>
+		<description>Shared Control lib</description>
+		<releaseNotes>Initital Release</releaseNotes>
+		<copyright>Copyright 2022</copyright>
+		<tags></tags>
+		<dependencies>
+			<group targetFramework=".NETFramework4.8" />
+		</dependencies>
+	</metadata>
+</package>
