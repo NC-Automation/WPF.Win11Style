@@ -116,7 +116,7 @@
             <CheckBox Content="Disabled" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" IsEnabled="False"/>
             <CheckBox Content="Disabled Checked" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="True"/>
             <CheckBox Content="Disabled Checked" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" IsEnabled="True" IsChecked="{x:Null}"/>
-            <Button Content="Button" IsDefault="False" HorizontalAlignment="Left" Margin="219,18,0,0" VerticalAlignment="Top" Padding="5,3"/>
+            <Button Content="Button" IsDefault="False" HorizontalAlignment="Left" Margin="219,18,0,0" VerticalAlignment="Top" Padding="5,3" Click="Button_Click"/>
             <Button Content="Button" IsDefault="True" HorizontalAlignment="Left" Margin="219,48,0,0" VerticalAlignment="Top" Padding="5,3"/>
             <Button Content="Button Disabled" HorizontalAlignment="Left" Margin="219,78,0,0" Padding="5,3" VerticalAlignment="Top" IsEnabled="False"/>
             <ScrollBar HorizontalAlignment="Left" Margin="355,12,0,0" VerticalAlignment="Top" Height="154" Maximum="10" Value="2"  ViewportSize="6"/>

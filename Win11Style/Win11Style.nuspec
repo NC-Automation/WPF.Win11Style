@@ -2,14 +2,14 @@
 <package >
 	<metadata>
 		<id>NCAutomation.Win11Style</id>
-		<version>1.0.0</version>
+		<version>1.0.2</version>
 		<title>owner</title>
 		<authors>Neil Burkholder</authors>
 		<owners>Neil Burkholder</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<license type="expression">MIT</license>
 		<description>Shared Control lib</description>
-		<releaseNotes>Initital Release</releaseNotes>
+		<releaseNotes>Fixed Crash</releaseNotes>
 		<copyright>Copyright 2022</copyright>
 		<tags></tags>
 		<dependencies>

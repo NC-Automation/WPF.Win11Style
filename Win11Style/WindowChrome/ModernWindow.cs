@@ -16,10 +16,12 @@ namespace Win11Style.WindowChrome
         {
             ThemeWatcher.OnChromeColorChanged += () => GlowColor = ThemeWatcher.ChromeColor;
             GlowColor = ThemeWatcher.ChromeColor;
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ModernWindow), new FrameworkPropertyMetadata(typeof(ModernWindow)));
         }
 
-
+        static ModernWindow()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ModernWindow), new FrameworkPropertyMetadata(typeof(ModernWindow)));
+        }
 
         #region Dependency Properties
         public static readonly DependencyProperty ActiveTitleBarMatchGlowProperty =

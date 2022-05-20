@@ -84,5 +84,11 @@ namespace Win11Style.Showcase
             App.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("pack://application:,,,/Win11Style;component/Themes/LightMode.xaml") });
             App.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("pack://application:,,,/Win11Style;component/Themes/Win11Style.xaml") });
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new MainWindow();
+            win.Show();
+        }
     }
 }
