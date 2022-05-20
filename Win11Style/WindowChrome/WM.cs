@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Win11Style.WindowChrome
 {
-    internal enum WM : uint
+    public enum WM : uint
     {
         NULL = 0x0000,
         CREATE = 0x0001,

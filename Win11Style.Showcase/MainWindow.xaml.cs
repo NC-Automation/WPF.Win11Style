@@ -88,7 +88,9 @@ namespace Win11Style.Showcase
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var win = new MainWindow();
-            win.Show();
+            win.Owner = this;
+            win.WindowStyle = WindowStyle.ToolWindow;
+            win.ShowDialog();
         }
     }
 }

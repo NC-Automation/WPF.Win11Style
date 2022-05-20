@@ -111,7 +111,16 @@
                                 <Setter TargetName="LayoutRoot" Property="Background" Value="#C75050"/>
                                 <Setter TargetName="LayoutRoot" Property="Margin" Value="0,6,1,0"/>
                                 <Setter TargetName="LayoutRoot" Property="VerticalAlignment" Value="Top"/>
+                                <Setter TargetName="txt" Property="Foreground" Value="White"/>
                             </DataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=IsActive}" Value="false"/>
+                                    <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}, Path=WindowStyle}" Value="ToolWindow"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter TargetName="LayoutRoot" Property="Background" Value="#50C75050"/>
+                                <Setter TargetName="txt" Property="Foreground" Value="#DDDDDD"/>
+                            </MultiDataTrigger>
                             <Trigger Property="controlzEx:NonClientControlProperties.IsNCMouseOver" Value="True">
                                 <Setter TargetName="LayoutRoot" Property="Background" Value="#E81123"/>
                                 <Setter TargetName="txt" Property="Foreground" Value="White"/>

@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Interop;
 using System.Windows.Media;
 
 namespace Win11Style.WindowChrome
@@ -16,6 +17,7 @@ namespace Win11Style.WindowChrome
         {
             ThemeWatcher.OnChromeColorChanged += () => GlowColor = ThemeWatcher.ChromeColor;
             GlowColor = ThemeWatcher.ChromeColor;
+            Loaded += Win_Loaded;
         }
 
         static ModernWindow()
@@ -47,6 +49,8 @@ namespace Win11Style.WindowChrome
         //# E5E5E5
         //#525252
         #endregion
+
+        #region Properties
 
         public bool ActiveTitleBarMatchGlow
         {
@@ -84,5 +88,31 @@ namespace Win11Style.WindowChrome
             set { SetValue(TitleBarHeightProperty, value); }
         }
 
+        #endregion
+
+        private void Win_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                HwndSource source = PresentationSource.FromVisual(this) as HwndSource;
+                source.AddHook(WndProc);
+            }
+            catch { }
+        }
+
+
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            var WMmsg = (WindowChrome.WM)msg;
+            Console.WriteLine(WMmsg);
+            if (WMmsg == WM.NCACTIVATE)
+            {
+                var glow = GlowColor;
+                GlowColor = NonActiveGlowColor;
+                Task.Delay(100).ContinueWith(t => Dispatcher.Invoke(() => GlowColor = glow));
+            }
+
+            return IntPtr.Zero;
+        }
     }
 }
