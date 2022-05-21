@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace Win11Style.WindowChrome
 {
@@ -104,15 +105,49 @@ namespace Win11Style.WindowChrome
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             var WMmsg = (WindowChrome.WM)msg;
-            Console.WriteLine(WMmsg);
             if (WMmsg == WM.NCACTIVATE)
             {
-                var glow = GlowColor;
-                GlowColor = NonActiveGlowColor;
-                Task.Delay(100).ContinueWith(t => Dispatcher.Invoke(() => GlowColor = glow));
+                //only flash frame after second consecutive NCACTIVATE - this prevents a flash when activating the window
+                if (_flash) AnimateGlowFlash();
+                _flash = true;
             }
-
+            else _flash = false;
             return IntPtr.Zero;
+        }
+
+        private bool _flash = false;
+        private bool _isAnimating = false;
+        private void AnimateGlowFlash()
+        {
+            if (_isAnimating || !GlowColor.HasValue || !NonActiveGlowColor.HasValue) return;
+            _isAnimating = true;
+            var colorAnimation = new ColorAnimation
+            {
+                To = NonActiveGlowColor.Value,
+                Duration = TimeSpan.FromMilliseconds(10)
+            };
+            var colorAnimation2 = new ColorAnimation
+            {
+                To = GlowColor.Value,
+                Duration = TimeSpan.FromMilliseconds(10),
+                BeginTime = TimeSpan.FromMilliseconds(50)
+            };
+
+            var storyboard = new Storyboard();
+            Storyboard.SetTarget(colorAnimation, this);
+            Storyboard.SetTargetProperty(colorAnimation, new PropertyPath("GlowColor"));
+            Storyboard.SetTarget(colorAnimation2, this);
+            Storyboard.SetTargetProperty(colorAnimation2, new PropertyPath("GlowColor"));
+            storyboard.Children.Add(colorAnimation);
+            storyboard.Children.Add(colorAnimation2);
+            storyboard.Duration = TimeSpan.FromMilliseconds(100);
+            storyboard.Completed += Storyboard_Completed;
+            storyboard.Begin();
+        }
+
+        private void Storyboard_Completed(object sender, EventArgs e)
+        {
+            _isAnimating = false;
         }
     }
 }
