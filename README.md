@@ -11,7 +11,7 @@ Dark mode is the same rounded corner with dark colors.
 
 The rounded windows 11 styles are specifically designed to keep the same size, margins, and padding as the default style. This should enable adding the style without messing up our layouts.
 
-![image](https://user-images.githubusercontent.com/24275193/173205173-1c96f2e0-bd59-4cb7-9d27-b1674716cbaf.png)
+![Windows11Style](https://user-images.githubusercontent.com/24275193/173207908-b55a850e-e7fc-4221-bba4-685b47496fcc.gif)
 
 Here is a list of controls that have been styled so far.
 
