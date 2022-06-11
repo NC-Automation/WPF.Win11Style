@@ -59,8 +59,8 @@
 
     <!--button-->
     <Color x:Key="Button.BackgroundColor">#FFFFFF</Color>
-    <Color x:Key="Button.MouseOver.Background">#E1EFFA</Color>
-    <Color x:Key="Button.MouseOver.Border">#3B85C9</Color>
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#E1EFFA"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#3B85C9"/>
     <SolidColorBrush x:Key="ButtonForeground" Color="{StaticResource ForegroundColor}"/>
     <SolidColorBrush x:Key="Button.Background" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="ButtonBorder" Color="{StaticResource ControlBorderColor}"/>

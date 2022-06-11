@@ -150,27 +150,8 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="BorderBrush" Value="{StaticResource Button.IsDefault.Border}"/>
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard >
-                                        <ColorAnimation Duration="0:0:0.5"
-                                                            Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" 
-                                                            Storyboard.TargetName="ButtonBorder"
-                                                            To="{StaticResource Button.MouseOver.Background}"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard >
-                                        <ColorAnimation Duration="0:0:0.5"
-                                                            Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" 
-                                                            Storyboard.TargetName="ButtonBorder"
-                                                            To="{StaticResource Button.BackgroundColor}"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
+                            <Setter Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}"/>
+                            <Setter Property="Background" Value="{StaticResource Button.MouseOver.Background}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" Value="{StaticResource PressedButtonBackground}"/>
@@ -1576,7 +1557,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+    <Style TargetType="TextElement">
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
     </Style>
 
