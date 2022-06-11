@@ -46,6 +46,17 @@
             </Style.Triggers>
         </Style>
     </mw:ModernWindow.Style>
+    <Window.Resources>
+        <XmlDataProvider x:Key="MockList"   XPath="/MockObjects/*" >
+            <x:XData >
+                <MockObjects xmlns="">
+                    <MockObject  Name="Louis" Type="TTTT" Number="1" />
+                    <MockObject Name="Joseph" Type="TTTT" Number="2" />
+                    <MockObject Name="Papineau" Type="ZZZZ" Number="3" />
+                </MockObjects>
+            </x:XData>
+        </XmlDataProvider>
+    </Window.Resources>
     <Grid>
         <Menu VerticalAlignment="Top" th:DynamicStyle.BaseStyle="{DynamicResource {x:Type Menu}}">
             <th:DynamicStyle.DerivedStyle>
@@ -87,7 +98,7 @@
             <MenuItem Header="Appearance">
                 <MenuItem Header="Dark Mode" IsCheckable="True" IsChecked="{Binding ElementName=DarkMode, Path=IsChecked}"/>
                 <MenuItem Header="Win 11 Style" IsCheckable="True" IsChecked="{Binding ElementName=Win11Style, Path=IsChecked}"/>
-                <MenuItem x:Name="CompactTitleBar" Header="Compact Titlebar" IsCheckable="True"/>
+                <MenuItem x:Name="CompactTitleBar" Header="Compact Titlebar" IsCheckable="True" IsChecked="True"/>
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="Help"/>
@@ -97,7 +108,6 @@
                 <MenuItem Header="Help"/>
                 <MenuItem Header="Help"/>
             </MenuItem>
-
         </Menu>
         <Grid>
             <Grid.Style>
@@ -110,134 +120,181 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <CheckBox x:Name="DarkMode" Content="Dark Mode" HorizontalAlignment="Left" Margin="10,10,0,0"  VerticalAlignment="Top" Checked="DarkMode_Checked" Unchecked="DarkMode_UnChecked" IsChecked="False"/>
-            <CheckBox x:Name="Win11Style" Content="Win 11 Style" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Checked="Win11_Checked" Unchecked="Win11_Unchecked" IsChecked="True"/>
-            <CheckBox Content="Test" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" IsChecked="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=IsActive, Mode=OneWay}"/>
-            <CheckBox Content="Disabled" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" IsEnabled="False"/>
-            <CheckBox Content="Disabled Checked" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="True"/>
-            <CheckBox Content="Disabled Checked" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" IsEnabled="True" IsChecked="{x:Null}"/>
-            <Button Content="Button" IsDefault="False" HorizontalAlignment="Left" Margin="219,18,0,0" VerticalAlignment="Top" Padding="5,3" Click="Button_Click"/>
-            <Button Content="Button" IsDefault="True" HorizontalAlignment="Left" Margin="219,48,0,0" VerticalAlignment="Top" Padding="5,3"/>
-            <Button Content="Button Disabled" HorizontalAlignment="Left" Margin="219,78,0,0" Padding="5,3" VerticalAlignment="Top" IsEnabled="False"/>
-            <ScrollBar HorizontalAlignment="Left" Margin="355,12,0,0" VerticalAlignment="Top" Height="154" Maximum="10" Value="2"  ViewportSize="6"/>
-            <ScrollBar HorizontalAlignment="Left" Margin="176,114,0,0" VerticalAlignment="Top" Maximum="10" Value="2"  ViewportSize="6" Width="165" Orientation="Horizontal"/>
-            <ScrollViewer HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="150" Margin="400,12,0,0" HorizontalScrollBarVisibility="Auto">
-                <Grid Width="300" Height="300"/>
-            </ScrollViewer>
-            <TextBox HorizontalAlignment="Left" Margin="10,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Margin="10,135,0,0" TextWrapping="Wrap" Text="TextBox Disabled" IsEnabled="False" VerticalAlignment="Top" Width="120"/>
-            <ComboBox HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="150" SelectedIndex="0">
-                <ComboBoxItem Content="ComboBoxItem"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-            </ComboBox>
-            <ComboBox HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Width="150" SelectedIndex="0" IsEditable="True">
-                <ComboBoxItem Content="ComboBox Editable"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-            </ComboBox>
-            <ComboBox HorizontalAlignment="Left" Margin="10,227,0,0" VerticalAlignment="Top" Width="150" SelectedIndex="0" IsEditable="True" IsEnabled="False">
-                <ComboBoxItem Content="ComboBox Editable Disabled"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-            </ComboBox>
-            <ComboBox HorizontalAlignment="Left" Margin="10,257,0,0" VerticalAlignment="Top" Width="150" SelectedIndex="0" IsEditable="False" IsEnabled="False">
-                <ComboBoxItem Content="ComboBox Disabled"/>
-                <ComboBoxItem Content="ComboBoxItem1"/>
-                <ComboBoxItem Content="ComboBoxItem2"/>
-            </ComboBox>
-            <GroupBox Header="GroupBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="88" Margin="175,180,0,0">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel Margin="5">
-                        <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 1" IsChecked="true"/>
-                        <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 2" IsChecked="{x:Null}"/>
-                        <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 3"/>
-                    </StackPanel>
-                    <StackPanel Margin="5">
-                        <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 1" IsChecked="True" IsEnabled="False"/>
-                        <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 2" IsChecked="{x:Null}" IsEnabled="False"/>
-                        <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 3" IsEnabled="False"/>
-                    </StackPanel>
-                </StackPanel>
-            </GroupBox>
-            <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="400,12,0,0"/>
-            <ProgressBar HorizontalAlignment="Left" Height="18" Margin="400,38,0,0" VerticalAlignment="Top" Width="127" IsIndeterminate="True"/>
-            <ProgressBar HorizontalAlignment="Left" Height="18" Margin="400,67,0,0" VerticalAlignment="Top" Width="127" Value="50"/>
-            <RichTextBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="46" Margin="359,0,0,0">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Text="RichTextBox"/>
-                        <LineBreak/>
-                        <Hyperlink NavigateUri="https://google.com" IsEnabled="True" >This is a Link</Hyperlink>
-                        <LineBreak/>
-                        <Run Text="Test" Foreground="Red" FontWeight="Bold"/>
-                        <LineBreak/>
-                        <LineBreak/>
-                        <Run Text="Test" Foreground="Red" FontWeight="Bold"/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
-            <RichTextBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="46" Margin="469,0,0,0" IsEnabled="False">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Text="RichTextBox"/>
-                        <LineBreak/>
-                        <Hyperlink NavigateUri="https://google.com" >This is a Link</Hyperlink>
-                        <LineBreak/>
-                        <Run Text="Test" Foreground="Red" FontWeight="Bold"/>
-                        <LineBreak/>
-                        <LineBreak/>
-                        <Run Text="Test" Foreground="Red" FontWeight="Bold"/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
-            <TabControl HorizontalAlignment="Left" VerticalAlignment="Top" Width="278" Height="104" Margin="10,303,0,0" TabStripPlacement="Top">
-                <TabItem Header="Item 1">
-                    <Grid Background="{DynamicResource WindowBackgroundBrush}"/>
+            <TabControl TabStripPlacement="Left">
+                <TabItem Header="Buttons">
+                    <Grid>
+                        <CheckBox x:Name="DarkMode" Content="Dark Mode" HorizontalAlignment="Left" Margin="10,10,0,0"  VerticalAlignment="Top" Checked="DarkMode_Checked" Unchecked="DarkMode_UnChecked" IsChecked="False"/>
+                        <CheckBox x:Name="Win11Style" Content="Win 11 Style" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Checked="Win11_Checked" Unchecked="Win11_Unchecked" IsChecked="True"/>
+                        <CheckBox Content="Disabled" IsEnabled="False" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" IsChecked="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=IsActive, Mode=OneWay}"/>
+                        <CheckBox Content="Indeterminate" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" IsEnabled="True" IsChecked="{x:Null}"/>
+                        <Button Content="Button" IsDefault="False" HorizontalAlignment="Left" Margin="219,18,0,0" VerticalAlignment="Top" Padding="5,3" Click="Button_Click"/>
+                        <Button Content="Default Button" IsDefault="True" HorizontalAlignment="Left" Margin="219,48,0,0" VerticalAlignment="Top" Padding="5,3"/>
+                        <Button Content="Button Disabled" HorizontalAlignment="Left" Margin="219,78,0,0" Padding="5,3" VerticalAlignment="Top" IsEnabled="False"/>
+                        <Label Content="Label" HorizontalAlignment="Left" Margin="219,110,0,0" Padding="5,3" VerticalAlignment="Top"/>
+                        <TextBlock Text="TextBlock" HorizontalAlignment="Left" Margin="219,130,0,0" Padding="5,3" VerticalAlignment="Top"/>
+                        <GroupBox Header="GroupBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="88" Margin="10,100,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Margin="5">
+                                    <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 1" IsChecked="true"/>
+                                    <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 2" IsChecked="{x:Null}"/>
+                                    <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 3"/>
+                                </StackPanel>
+                                <StackPanel Margin="5">
+                                    <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 1" IsChecked="True" IsEnabled="False"/>
+                                    <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 2" IsChecked="{x:Null}" IsEnabled="False"/>
+                                    <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Option 3" IsEnabled="False"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <ProgressBar HorizontalAlignment="Left" Height="18" Margin="400,38,0,0" VerticalAlignment="Top" Width="127" IsIndeterminate="True"/>
+                        <ProgressBar HorizontalAlignment="Left" Height="18" Margin="400,67,0,0" VerticalAlignment="Top" Width="127" Value="{Binding ElementName=slider, Path=Value}"/>
+                        <Slider x:Name="slider" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,100,0,0" Width="130" Minimum="0" Maximum="100" Value="50"/>
+                        <ScrollBar HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Stretch" Maximum="10" Value="2"  ViewportSize="6"/>
+                        <ScrollBar HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Bottom" Maximum="10" Value="2"  ViewportSize="6" Orientation="Horizontal"/>
+                    </Grid>
                 </TabItem>
-                <TabItem Header="Item 2">
-                    <Grid Background="#FFE5E5E5"/>
+                <TabItem Header="Edits">
+                    <Grid>
+                        <ScrollViewer Margin="0" HorizontalScrollBarVisibility="Auto">
+                            <Grid MinHeight="600" MinWidth="1000">
+                                <TextBox HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                                <TextBox HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="TextBox Disabled" IsEnabled="False" VerticalAlignment="Top" Width="120"/>
+                                <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="10,60,0,0" Password="test"/>
+                                <ComboBox HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="150" SelectedIndex="0">
+                                    <ComboBoxItem Content="ComboBoxItem"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                </ComboBox>
+                                <ComboBox HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="150" SelectedIndex="0" IsEditable="True">
+                                    <ComboBoxItem Content="ComboBox Editable"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                </ComboBox>
+                                <ComboBox HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="150" SelectedIndex="0" IsEditable="True" IsEnabled="False">
+                                    <ComboBoxItem Content="ComboBox Editable Disabled"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                </ComboBox>
+                                <ComboBox HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="150" SelectedIndex="0" IsEditable="False" IsEnabled="False">
+                                    <ComboBoxItem Content="ComboBox Disabled"/>
+                                    <ComboBoxItem Content="ComboBoxItem1"/>
+                                    <ComboBoxItem Content="ComboBoxItem2"/>
+                                </ComboBox>
+                                <RichTextBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="46" Margin="10,206,0,0">
+                                    <FlowDocument>
+                                        <Paragraph>
+                                            <Run Text="RichTextBox"/>
+                                            <LineBreak/>
+                                            <Hyperlink NavigateUri="https://google.com" IsEnabled="True" >This is a Link</Hyperlink>
+                                            <LineBreak/>
+                                            <Run Text="Test" Foreground="Red" FontWeight="Bold"/>
+                                            <LineBreak/>
+                                            <LineBreak/>
+                                            <Run Text="Test" Foreground="Red" FontWeight="Bold"/>
+                                        </Paragraph>
+                                    </FlowDocument>
+                                </RichTextBox>
+                                <RichTextBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="108" Margin="10,260,0,0" IsEnabled="False">
+                                    <FlowDocument>
+                                        <Paragraph>
+                                            <Run Text="RichTextBox"/>
+                                            <LineBreak/>
+                                            <Hyperlink NavigateUri="https://google.com" >This is a Link</Hyperlink>
+                                            <LineBreak/>
+                                            <Run Text="Test" Foreground="Red" FontWeight="Bold"/>
+                                            <LineBreak/>
+                                            <LineBreak/>
+                                            <Run Text="Test" Foreground="Red" FontWeight="Bold"/>
+                                        </Paragraph>
+                                    </FlowDocument>
+                                </RichTextBox>
+                                <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,10,0,0" Width="150"/>
+                                <Calendar HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,203,0,0" />
+                            </Grid>
+                        </ScrollViewer>
+
+                    </Grid>
                 </TabItem>
-                <TabItem Header="Item 2" IsEnabled="False">
-                    <Grid Background="#FFE5E5E5"/>
+                <TabItem Header="Layout">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" MinHeight="30"/>
+                            <RowDefinition Height="100*"/>
+                        </Grid.RowDefinitions>
+                          
+                        <Expander Header="Expander" Grid.Row="0">
+                            <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="150" Margin="10,10,10,10" TabStripPlacement="Top">
+                            <TabItem Header="Item 1">
+                                <Grid Background="{DynamicResource WindowBackgroundBrush}"/>
+                            </TabItem>
+                            <TabItem Header="Item 2">
+                                <Grid />
+                            </TabItem>
+                            <TabItem Header="Item 2" IsEnabled="False">
+                                <Grid Background="#FFE5E5E5"/>
+                            </TabItem>
+                            </TabControl>
+                        </Expander>
+                        <Grid Grid.Row="1" DataContext="{Binding Source={StaticResource MockList}}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="50*"/>
+                            </Grid.ColumnDefinitions>
+                            <DataGrid Margin="10,0,5,10" ItemsSource="{Binding Mode=Default, XPath=/MockObjects/MockObject}" AutoGenerateColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding XPath=@Name}" ></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Type" Binding="{Binding XPath=@Type}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Number" Binding="{Binding XPath=@Number}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <GridSplitter Grid.Column="1" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Left" Background="#10808080"/>
+                            <ListBox Margin="10,0,10,10" Grid.Column="1">
+                                <ListBoxItem Content="Item 1"/>
+                                <ListBoxItem Content="Item 2"/>
+                                <ListBoxItem Content="Item 3"/>
+                                <ListBoxItem Content="Item 4"/>
+                            </ListBox>
+                        </Grid>
+                    </Grid>
                 </TabItem>
             </TabControl>
+            
 
         </Grid>
     </Grid>
