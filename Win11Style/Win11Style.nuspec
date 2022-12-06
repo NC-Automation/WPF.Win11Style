@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>NCAutomation.Win11Style</id>
-		<version>1.0.9</version>
+		<version>1.0.10-alpha1</version>
 		<title>owner</title>
 		<authors>Neil Burkholder</authors>
 		<owners>Neil Burkholder</owners>
@@ -13,7 +13,10 @@
 		<copyright>Copyright 2023</copyright>
 		<tags></tags>
 		<dependencies>
-			<group targetFramework=".NETFramework4.8" />
+			<group targetFramework=".NETFramework4.8">
+				<dependency id="CommunityToolkit.Mvvm" version="8" />
+				<dependency id="ControlzEx" version="6.0.0-alpha0255" />			
+			</group>
 		</dependencies>
 	</metadata>
 </package>
