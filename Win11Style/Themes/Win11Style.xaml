@@ -26,10 +26,10 @@
             <Setter.Value>
                 <ControlTemplate>
                     <Rectangle Margin="1" RadiusX="5" RadiusY="5" 
-									SnapsToDevicePixels="true" 
-									Stroke="{StaticResource CheckBoxStroke}" 
-									StrokeThickness="1" 
-									StrokeDashArray="1 2"/>
+                                    SnapsToDevicePixels="true" 
+                                    Stroke="{StaticResource CheckBoxStroke}" 
+                                    StrokeThickness="1" 
+                                    StrokeDashArray="1 2"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -39,10 +39,10 @@
             <Setter.Value>
                 <ControlTemplate>
                     <Rectangle Margin="14,0,0,0"
-									SnapsToDevicePixels="true" 
-									Stroke="{StaticResource CheckBoxStroke}" 
-									StrokeThickness="1" 
-									StrokeDashArray="1 2"/>
+                                    SnapsToDevicePixels="true" 
+                                    Stroke="{StaticResource CheckBoxStroke}" 
+                                    StrokeThickness="1" 
+                                    StrokeDashArray="1 2"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -118,9 +118,9 @@
             <Setter.Value>
                 <ControlTemplate>
                     <Rectangle Margin="4" SnapsToDevicePixels="true"
-						Stroke="{StaticResource ForegroundBrush}"
-						StrokeThickness="1"
-						StrokeDashArray="1 2"/>
+                        Stroke="{StaticResource ForegroundBrush}"
+                        StrokeThickness="1"
+                        StrokeDashArray="1 2"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -138,15 +138,15 @@
             <Setter.Value>
                 <ControlTemplate x:Name="ButtonTemplate" TargetType="{x:Type Button}">
                     <Border x:Name="ButtonBorder"
-						Background="{TemplateBinding Background}" 
-						BorderBrush="{TemplateBinding BorderBrush}"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						CornerRadius="3">
+                        Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-							Margin="{TemplateBinding Padding}" 
-							RecognizesAccessKey="True" 
-							SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
-							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            Margin="{TemplateBinding Padding}" 
+                            RecognizesAccessKey="True" 
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
@@ -187,41 +187,41 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Rectangle x:Name="Corner"
-							Grid.Column="1"
-							Grid.Row="1"
-							Fill="{TemplateBinding Background}"/>
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Fill="{TemplateBinding Background}"/>
                         <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
-							CanContentScroll="{TemplateBinding CanContentScroll}"
-							CanHorizontallyScroll="False"
-							CanVerticallyScroll="False"
-							ContentTemplate="{TemplateBinding ContentTemplate}"
-							Content="{TemplateBinding Content}"
-							Grid.Column="0"
-							Grid.Row="0"
-							Margin="{TemplateBinding Padding}"/>
+                            CanContentScroll="{TemplateBinding CanContentScroll}"
+                            CanHorizontallyScroll="False"
+                            CanVerticallyScroll="False"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Content="{TemplateBinding Content}"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Margin="{TemplateBinding Padding}"/>
                         <ScrollBar x:Name="PART_VerticalScrollBar"
-							AutomationProperties.AutomationId="VerticalScrollBar"
-							Cursor="Arrow"
-							Grid.Column="1"
-							Grid.Row="0"
-							Maximum="{TemplateBinding ScrollableHeight}"
-							Minimum="0" 
-							Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
-							Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
-							ViewportSize="{TemplateBinding ViewportHeight}"
-							Style="{DynamicResource VerticalScrollBarStyle}"/>
+                            AutomationProperties.AutomationId="VerticalScrollBar"
+                            Cursor="Arrow"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Maximum="{TemplateBinding ScrollableHeight}"
+                            Minimum="0" 
+                            Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                            Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                            ViewportSize="{TemplateBinding ViewportHeight}"
+                            Style="{DynamicResource VerticalScrollBarStyle}"/>
                         <ScrollBar x:Name="PART_HorizontalScrollBar"
-							AutomationProperties.AutomationId="HorizontalScrollBar"
-							Cursor="Arrow"
-							Grid.Column="0" 
-							Grid.Row="1"
-							Maximum="{TemplateBinding ScrollableWidth}"
-							Minimum="0"
-							Orientation="Horizontal"
-							Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
-							Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
-							ViewportSize="{TemplateBinding ViewportWidth}"
-							Style="{DynamicResource HorisontalScrollBarStyle}"/>
+                            AutomationProperties.AutomationId="HorizontalScrollBar"
+                            Cursor="Arrow"
+                            Grid.Column="0" 
+                            Grid.Row="1"
+                            Maximum="{TemplateBinding ScrollableWidth}"
+                            Minimum="0"
+                            Orientation="Horizontal"
+                            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                            Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                            ViewportSize="{TemplateBinding ViewportWidth}"
+                            Style="{DynamicResource HorisontalScrollBarStyle}"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -236,7 +236,7 @@
                 <ControlTemplate TargetType="{x:Type RepeatButton}">
                     <Grid Background="Transparent">
                         <Path x:Name="TrianglePath" Data="{StaticResource RepeatButton}" 
-									Fill="{StaticResource VerticalScrollBarThumb}" Height="Auto" Margin="5" Stretch="Fill" Width="Auto"/>
+                                    Fill="{StaticResource VerticalScrollBarThumb}" Height="Auto" Margin="5" Stretch="Fill" Width="Auto"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -258,7 +258,7 @@
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Grid Background="{StaticResource VerticalScrollBarBackground}">
                         <Rectangle x:Name="VerticalThumb" Fill="{StaticResource VerticalScrollBarThumb}"
-									Width="7.4" RadiusX="4" RadiusY="4"/>
+                                    Width="7.4" RadiusX="4" RadiusY="4"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -278,8 +278,8 @@
                 <ControlTemplate TargetType="{x:Type RepeatButton}">
                     <Grid Background="Transparent">
                         <Path x:Name="BottomTrianglePath" Data="{StaticResource RepeatButton}" 
-									Fill="{StaticResource VerticalScrollBarThumb}" Height="Auto" Margin="5" Stretch="Fill" Width="Auto"
-									RenderTransformOrigin="0.5,0.5">
+                                    Fill="{StaticResource VerticalScrollBarThumb}" Height="Auto" Margin="5" Stretch="Fill" Width="Auto"
+                                    RenderTransformOrigin="0.5,0.5">
                             <Path.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="-1" ScaleX="1"/>
@@ -311,8 +311,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RepeatButton}">
                     <Rectangle Fill="{TemplateBinding Background}"
-								Height="{TemplateBinding Height}"
-								Width="{TemplateBinding Width}"/>
+                                Height="{TemplateBinding Height}"
+                                Width="{TemplateBinding Width}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -347,8 +347,8 @@
                             <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
                         </Grid.RowDefinitions>
                         <RepeatButton Command="{x:Static ScrollBar.LineUpCommand}"
-									IsEnabled="{TemplateBinding IsMouseOver}"
-									Style="{StaticResource RepeatButtonUpStyle}"/>
+                                    IsEnabled="{TemplateBinding IsMouseOver}"
+                                    Style="{StaticResource RepeatButtonUpStyle}"/>
                         <Track x:Name="PART_Track" IsDirectionReversed="true" IsEnabled="{TemplateBinding IsMouseOver}" Grid.Row="1">
                             <Track.DecreaseRepeatButton>
                                 <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource VerticalScrollBarPageButton}"/>
@@ -361,8 +361,8 @@
                             </Track.Thumb>
                         </Track>
                         <RepeatButton Command="{x:Static ScrollBar.LineDownCommand}"
-									IsEnabled="{TemplateBinding IsMouseOver}" Grid.Row="2" 
-									Style="{DynamicResource RepeatButtonDownStyle}"/>
+                                    IsEnabled="{TemplateBinding IsMouseOver}" Grid.Row="2" 
+                                    Style="{DynamicResource RepeatButtonDownStyle}"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
@@ -470,7 +470,7 @@
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Grid Background="{StaticResource HorizontalScrollBarBackground}">
                         <Rectangle x:Name="VerticalThumb" Fill="{StaticResource VerticalScrollBarThumb}"
-									Height="7.4" RadiusX="4" RadiusY="4"/>
+                                    Height="7.4" RadiusX="4" RadiusY="4"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -501,7 +501,7 @@
                             </TransformGroup>
                         </Grid.RenderTransform>
                         <Path x:Name="TrianglePath" Data="{StaticResource RepeatButton}" 
-									Fill="{StaticResource VerticalScrollBarThumb}" Height="Auto" Margin="5" Stretch="Fill" Width="Auto"/>
+                                    Fill="{StaticResource VerticalScrollBarThumb}" Height="Auto" Margin="5" Stretch="Fill" Width="Auto"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -532,7 +532,7 @@
                             </TransformGroup>
                         </Grid.RenderTransform>
                         <Path x:Name="TrianglePath" Data="{StaticResource RepeatButton}" 
-									Fill="{StaticResource VerticalScrollBarThumb}" Height="Auto" Margin="5" Stretch="Fill" Width="Auto" RenderTransformOrigin="0.5,0.5">
+                                    Fill="{StaticResource VerticalScrollBarThumb}" Height="Auto" Margin="5" Stretch="Fill" Width="Auto" RenderTransformOrigin="0.5,0.5">
                             <Path.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -621,13 +621,13 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border x:Name="Bd"
-						BorderBrush="{TemplateBinding BorderBrush}" 
-						BorderThickness="{TemplateBinding BorderThickness}" 
-						Background="{TemplateBinding Background}"
-						CornerRadius="3"
-						SnapsToDevicePixels="true">
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="3"
+                        SnapsToDevicePixels="true">
                         <ScrollViewer x:Name="PART_ContentHost" Padding="{TemplateBinding Padding}" Background="Transparent" 
-							            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
@@ -789,10 +789,10 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border x:Name="Bd"
-						    BorderThickness="0" 
-						    Background="{TemplateBinding Background}"
-						    CornerRadius="3"
-						    SnapsToDevicePixels="true">
+                            BorderThickness="0" 
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="3"
+                            SnapsToDevicePixels="true">
                         <ScrollViewer x:Name="PART_ContentHost" Background="Transparent"
                                           Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                     </Border>
@@ -1123,10 +1123,10 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Menu}">
                     <Border BorderBrush="{TemplateBinding BorderBrush}" 
-        					BorderThickness="{TemplateBinding BorderThickness}" 
-        					Background="{TemplateBinding Background}" 
-        					Padding="{TemplateBinding Padding}" 
-        					SnapsToDevicePixels="true">
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" 
+                            Padding="{TemplateBinding Padding}" 
+                            SnapsToDevicePixels="true">
                         <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Border>
                 </ControlTemplate>
@@ -1140,10 +1140,10 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ContextMenu}">
                     <Border BorderBrush="{StaticResource SubMenuBorderBrush}" 
-        					BorderThickness="{TemplateBinding BorderThickness}" 
-        					Background="{StaticResource SubMenuBackgroundBrush}" 
-        					Padding="{TemplateBinding Padding}" CornerRadius="5"
-        					SnapsToDevicePixels="true">
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{StaticResource SubMenuBackgroundBrush}" 
+                            Padding="{TemplateBinding Padding}" CornerRadius="5"
+                            SnapsToDevicePixels="true">
                         <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Border>
                 </ControlTemplate>
@@ -1172,16 +1172,16 @@
                                       VerticalAlignment="Center"/>
                 <Border x:Name="GlyphPanel" 
                             BorderBrush="Transparent"
-							Margin="1" Visibility="Hidden">
+                            Margin="1" Visibility="Hidden">
                     <Path x:Name="Glyph" 
-								Data="{StaticResource Checkmark}" 
-								Fill="{StaticResource ForegroundBrush}" 
-								FlowDirection="LeftToRight"
-								Margin="5,0,0,0"
-								VerticalAlignment="Center" 
-								Height="7.5"
-								Stretch="Fill" 
-								Width="7.5"/>
+                                Data="{StaticResource Checkmark}" 
+                                Fill="{StaticResource ForegroundBrush}" 
+                                FlowDirection="LeftToRight"
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center" 
+                                Height="7.5"
+                                Stretch="Fill" 
+                                Width="7.5"/>
                 </Border>
                 <ContentPresenter x:Name="Content"  Grid.Column="2"
                                       ContentSource="Header"
@@ -1287,52 +1287,52 @@
             <Border x:Name="Bg" Background="{TemplateBinding Background}" CornerRadius="4"/>
             <DockPanel>
                 <ContentPresenter x:Name="Icon" 
-										ContentSource="Icon"
-										Margin="4,0,6,0" 
-										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
-										VerticalAlignment="Center"/>
+                                        ContentSource="Icon"
+                                        Margin="4,0,6,0" 
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                        VerticalAlignment="Center"/>
                 <Path x:Name="GlyphPanel"
-							Data="{StaticResource Checkmark}" 
-							Fill="{TemplateBinding Foreground}" 
-							FlowDirection="LeftToRight" 
-							Visibility="Collapsed"
-							Margin="5,0,0,0"
-							VerticalAlignment="Center" 
-							Height="7.5"
-							Stretch="Fill" 
-							Width="7.5"/>
+                            Data="{StaticResource Checkmark}" 
+                            Fill="{TemplateBinding Foreground}" 
+                            FlowDirection="LeftToRight" 
+                            Visibility="Collapsed"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center" 
+                            Height="7.5"
+                            Stretch="Fill" 
+                            Width="7.5"/>
                 <ContentPresenter x:Name="Content" ContentSource="Header"
-										Margin="{TemplateBinding Padding}"                                        
-										RecognizesAccessKey="True"
-										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                        Margin="{TemplateBinding Padding}"                                        
+                                        RecognizesAccessKey="True"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
             </DockPanel>
             <Popup x:Name="PART_Popup"
-						AllowsTransparency="true" 
-						Focusable="false" 
-						HorizontalOffset="1" 
-						IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
-						PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}" 
-						Placement="Bottom"
-						VerticalOffset="-1">
+                        AllowsTransparency="true" 
+                        Focusable="false" 
+                        HorizontalOffset="1" 
+                        IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                        PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}" 
+                        Placement="Bottom"
+                        VerticalOffset="-1">
                 <Popup.OpacityMask>
                     <VisualBrush Visual="{Binding ElementName=Shdw}"/>
                 </Popup.OpacityMask>
 
                 <Border x:Name="Shdw" Background="Transparent" CornerRadius="5">
                     <Border x:Name="SubMenuBorder" CornerRadius="5"
-								BorderBrush="{StaticResource SubMenuBorderBrush}" 
-								BorderThickness="1" 
-								Background="{StaticResource SubMenuBackgroundBrush}">
+                                BorderBrush="{StaticResource SubMenuBorderBrush}" 
+                                BorderThickness="1" 
+                                Background="{StaticResource SubMenuBackgroundBrush}">
                         <ScrollViewer x:Name="SubMenuScrollViewer" Background="Transparent" 
-											Margin="1,0"
-											Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}">
+                                            Margin="1,0"
+                                            Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}">
                             <Grid RenderOptions.ClearTypeHint="Enabled" Background="Transparent">
                                 <ItemsPresenter x:Name="ItemsPresenter"
-													KeyboardNavigation.DirectionalNavigation="Cycle"
-													Grid.IsSharedSizeScope="true" 
-													Margin="1" VerticalAlignment="Center"
-													SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-													KeyboardNavigation.TabNavigation="Cycle"/>
+                                                    KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                    Grid.IsSharedSizeScope="true" 
+                                                    Margin="1" VerticalAlignment="Center"
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                    KeyboardNavigation.TabNavigation="Cycle"/>
                             </Grid>
                         </ScrollViewer>
                     </Border>
@@ -1375,8 +1375,8 @@
     <ControlTemplate x:Key="{ComponentResourceKey ResourceId=SubmenuHeaderTemplateKey, TypeInTargetAssembly={x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
         <Grid SnapsToDevicePixels="true">
             <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5"
-							Stroke="{TemplateBinding BorderBrush}" 
-							StrokeThickness="1"/>
+                            Stroke="{TemplateBinding BorderBrush}" 
+                            StrokeThickness="1"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="14" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
@@ -1387,66 +1387,66 @@
                     <ColumnDefinition Width="17"/>
                 </Grid.ColumnDefinitions>
                 <ContentPresenter x:Name="Icon"
-										ContentSource="Icon"
-										Margin="1" 
-										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-										VerticalAlignment="Center"/>
+                                        ContentSource="Icon"
+                                        Margin="1" 
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                        VerticalAlignment="Center"/>
                 <Border x:Name="GlyphPanel" 
-							Background="Transparent"
-							Margin="1" 
-							Visibility="Hidden">
+                            Background="Transparent"
+                            Margin="1" 
+                            Visibility="Hidden">
                     <Path x:Name="Glyph" 
-								Data="{StaticResource Checkmark}"
-								Fill="{StaticResource ForegroundBrush}" 
-								FlowDirection="LeftToRight" 
-								Margin="5,0,0,0"
-								VerticalAlignment="Center" 
-								Height="7.5"
-								Stretch="Fill" 
-								Width="7.5"/>
+                                Data="{StaticResource Checkmark}"
+                                Fill="{StaticResource ForegroundBrush}" 
+                                FlowDirection="LeftToRight" 
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center" 
+                                Height="7.5"
+                                Stretch="Fill" 
+                                Width="7.5"/>
                 </Border>
                 <ContentPresenter x:Name="Content" Grid.Column="2"
-										ContentSource="Header" 
-										Margin="{TemplateBinding Padding}" 
-										RecognizesAccessKey="True" 
-										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                        ContentSource="Header" 
+                                        Margin="{TemplateBinding Padding}" 
+                                        RecognizesAccessKey="True" 
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 <TextBlock  Grid.Column="4"
-								Margin="{TemplateBinding Padding}"
-								Text="{TemplateBinding InputGestureText}"
-								Visibility="Collapsed"/>
+                                Margin="{TemplateBinding Padding}"
+                                Text="{TemplateBinding InputGestureText}"
+                                Visibility="Collapsed"/>
                 <Path x:Name="RightArrowPath" Grid.Column="5" 
-							Data="{StaticResource RightArrow}"
-							Fill="{TemplateBinding Foreground}" 
-							Margin="4,0,0,0" 
-							VerticalAlignment="Center"/>
+                            Data="{StaticResource RightArrow}"
+                            Fill="{TemplateBinding Foreground}" 
+                            Margin="4,0,0,0" 
+                            VerticalAlignment="Center"/>
             </Grid>
             <Popup x:Name="PART_Popup" 
-						AllowsTransparency="true" 
-						Focusable="false" 
-						HorizontalOffset="-2" 
-						IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" 
-						PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}"
-						Placement="Right" 
-						VerticalOffset="-3">
+                        AllowsTransparency="true" 
+                        Focusable="false" 
+                        HorizontalOffset="-2" 
+                        IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" 
+                        PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}"
+                        Placement="Right" 
+                        VerticalOffset="-3">
                 <Popup.OpacityMask>
                     <VisualBrush Visual="{Binding ElementName=Shdw}"/>
                 </Popup.OpacityMask>
 
                 <Border x:Name="Shdw" Background="Transparent" CornerRadius="5">
                     <Border x:Name="SubMenuBorder" CornerRadius="5"
-								BorderBrush="{StaticResource SubMenuBorderBrush}"
-								BorderThickness="1"
-								Background="{StaticResource SubMenuBackgroundBrush}">
+                                BorderBrush="{StaticResource SubMenuBorderBrush}"
+                                BorderThickness="1"
+                                Background="{StaticResource SubMenuBackgroundBrush}">
                         <ScrollViewer x:Name="SubMenuScrollViewer" Background="Transparent"
-											Margin="1,0" 
-											Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}">
+                                            Margin="1,0" 
+                                            Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}">
                             <Grid RenderOptions.ClearTypeHint="Enabled" Background="Transparent">
                                 <ItemsPresenter x:Name="ItemsPresenter" 
-													KeyboardNavigation.DirectionalNavigation="Cycle"
-													Grid.IsSharedSizeScope="true" 
-													Margin="2" 
-													SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-													KeyboardNavigation.TabNavigation="Cycle"/>
+                                                    KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                    Grid.IsSharedSizeScope="true" 
+                                                    Margin="2" 
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                    KeyboardNavigation.TabNavigation="Cycle"/>
                             </Grid>
                         </ScrollViewer>
                     </Border>
