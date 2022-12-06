@@ -1,4 +1,6 @@
-﻿using Microsoft.Win32;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using CommunityToolkit.Mvvm.Messaging.Messages;
+using Microsoft.Win32;
 using System;
 using System.Globalization;
 using System.Management;
@@ -31,8 +33,6 @@ namespace Win11Style.WindowChrome
 
         private const string RegistryValueName = "AppsUseLightTheme";
         private static WindowsTheme windowsTheme;
-        public static Action OnThemeChanged;
-        public static Action OnChromeColorChanged;
 
         public static WindowsTheme WindowsTheme
         {
@@ -116,7 +116,7 @@ namespace Win11Style.WindowChrome
                 if (color != null && color.Value.ToString() != ChromeColor.ToString())
                 {
                     ChromeColor = color.Value;
-                    OnChromeColorChanged?.Invoke();
+                    WeakReferenceMessenger.Default.Send(new ChromeColorChangedMessage(ChromeColor));
                 }
             }
             return IntPtr.Zero;
@@ -129,7 +129,7 @@ namespace Win11Style.WindowChrome
         private static void Watcher_EventArrived(object sender, EventArrivedEventArgs e)
         {
             WindowsTheme = GetWindowsTheme();
-            Application.Current.Dispatcher.Invoke(() => OnThemeChanged?.Invoke());
+            WeakReferenceMessenger.Default.Send(new ThemeChangedMessage(WindowsTheme));
         }
 
         public static WindowsTheme GetWindowsTheme()
@@ -207,6 +207,19 @@ namespace Win11Style.WindowChrome
             public uint colorizationBlurBalance;
             public uint colorizationGlassReflectionIntensity;
             public uint colorizationOpaqueBlend;
+        }
+
+    }
+    public class ThemeChangedMessage : ValueChangedMessage<WindowsTheme>
+    {
+        public ThemeChangedMessage(WindowsTheme value) : base(value)
+        {
+        }
+    }
+    public class ChromeColorChangedMessage : ValueChangedMessage<Color>
+    {
+        public ChromeColorChangedMessage(Color value) : base(value)
+        {
         }
 
     }

@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Win11Style.WindowChrome;
 
 namespace Win11Style.Showcase
@@ -25,6 +15,34 @@ namespace Win11Style.Showcase
         {
             InitializeComponent();
             if (ThemeWatcher.WindowsTheme == WindowsTheme.Dark) DarkMode.IsChecked = true;
+            osTheme = ThemeWatcher.WindowsTheme;
+            WeakReferenceMessenger.Default.Register<ThemeChangedMessage>(this, (r, m) =>
+            {
+                OSThemeChanged(m.Value);
+            });
+        }
+
+        WindowsTheme osTheme = WindowsTheme.Light;
+
+        private void OSThemeChanged(WindowsTheme theme)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                bool followTheme = (osTheme == WindowsTheme.Dark && DarkMode.IsChecked == true)
+                    || (osTheme == WindowsTheme.Light && DarkMode.IsChecked != true);
+                if (followTheme)
+                {
+                    if (theme == WindowsTheme.Dark)
+                    {
+                        DarkMode.IsChecked = true;
+                    }
+                    else
+                    {
+                        Win11Style.IsChecked = true;
+                    }
+                }
+                osTheme = theme;
+            });
         }
         private void DarkMode_UnChecked(object sender, RoutedEventArgs e)
         {

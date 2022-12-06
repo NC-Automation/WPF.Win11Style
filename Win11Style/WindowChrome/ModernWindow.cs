@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using System;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
@@ -16,7 +11,11 @@ namespace Win11Style.WindowChrome
     {
         public ModernWindow()
         {
-            ThemeWatcher.OnChromeColorChanged += () => GlowColor = ThemeWatcher.ChromeColor;
+            WeakReferenceMessenger.Default.Register<ChromeColorChangedMessage>(this, (r, m) =>
+            {
+                GlowColor = m.Value;
+            });
+
             GlowColor = ThemeWatcher.ChromeColor;
             Loaded += Win_Loaded;
         }
