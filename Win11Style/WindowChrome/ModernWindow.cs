@@ -110,7 +110,13 @@ namespace Win11Style.WindowChrome
                 if (_flash) AnimateGlowFlash();
                 _flash = true;
             }
-            else _flash = false;
+            else
+            {
+                if (WMmsg == WM.ACTIVATE)
+                {
+                    _flash = false;
+                }
+            }
             return IntPtr.Zero;
         }
 
