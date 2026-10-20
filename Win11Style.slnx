@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Win11Style.Showcase/Win11Style.Showcase.csproj" />
+  <Project Path="Win11Style/Win11Style.csproj" />
+</Solution>
