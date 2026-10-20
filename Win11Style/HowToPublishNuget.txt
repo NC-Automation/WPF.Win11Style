@@ -1,3 +1,8 @@
-1. Edit the WinllStyle.nuspec to increment the release version and notes.
-2. Edit the deploy.bat to increment the version.
-3. Run deploy.bat
+Package metadata now lives in Win11Style.csproj (the .nuspec is no longer used).
+Dependencies are generated automatically from the PackageReference items.
+
+1. Edit Win11Style.csproj to increment <Version> and update <PackageReleaseNotes>.
+2. Pack:
+   dotnet pack Win11Style\Win11Style.csproj -c Release -o nupkg
+3. Push (Azure DevOps feed):
+   dotnet nuget push nupkg\NCAutomation.Win11Style.<version>.nupkg --source https://pkgs.dev.azure.com/NCAutomation/_packaging/NCAutomation/nuget/v3/index.json --api-key az

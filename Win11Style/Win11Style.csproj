@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net48</TargetFramework>
+		<TargetFramework>net10.0-windows</TargetFramework>
 		<OutputType>Library</OutputType>
 		<UseWPF>true</UseWPF>
 		<RootNamespace>Win11Style</RootNamespace>
@@ -8,25 +8,30 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<Deterministic>true</Deterministic>
 	</PropertyGroup>
+	<PropertyGroup>
+		<PackageId>NCAutomation.Win11Style</PackageId>
+		<Version>1.2.0</Version>
+		<Title>Win11Style</Title>
+		<Authors>Neil Burkholder</Authors>
+		<Company>NC Automation</Company>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Description>Shared Control lib</Description>
+		<PackageReleaseNotes>Added support for dark system menu</PackageReleaseNotes>
+		<Copyright>Copyright 2024</Copyright>
+		<RepositoryUrl>https://github.com/NC-Automation/WPF.Win11Style</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
 	<ItemGroup>
-		<Reference Include="PresentationFramework.Aero2" />
-		<Reference Include="System.ComponentModel.DataAnnotations" />
-		<Reference Include="System.Configuration" />
-		<Reference Include="System.Management" />
-		<Reference Include="System.Web" />
-		<Reference Include="System.Web.Extensions" />
-		<Reference Include="Microsoft.CSharp" />
-		<Reference Include="System.Net.Http" />
-	</ItemGroup>
-	<ItemGroup>
+		<None Remove="App.config" />
 		<Compile Update="Properties\Resources.Designer.cs" AutoGen="True" DesignTime="True" DependentUpon="Resources.resx" />
 		<Compile Update="Properties\Settings.Designer.cs" AutoGen="True" DependentUpon="Settings.settings" DesignTimeSharedInput="True" />
 		<EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
 		<None Update="Properties\Settings.settings" Generator="SettingsSingleFileGenerator" LastGenOutput="Settings.Designer.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
 		<PackageReference Include="ControlzEx" Version="6.0.0-alpha0255" />
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" />
+		<PackageReference Include="System.Management" Version="10.0.13" />
 	</ItemGroup>
 </Project>
