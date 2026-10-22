@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
-using ControlzEx.Theming;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows;

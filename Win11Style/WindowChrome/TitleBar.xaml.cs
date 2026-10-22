@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interop;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Win11Style.WindowChrome
 {
@@ -28,6 +19,12 @@ namespace Win11Style.WindowChrome
             InitializeComponent();
         }
 
+        [System.Runtime.InteropServices.DllImport("shell32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+        static extern IntPtr ExtractAssociatedIcon(IntPtr hInst, StringBuilder lpIconPath, ref ushort lpiIcon);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern bool DestroyIcon(IntPtr hIcon);
+
         BitmapSource icon;
         public BitmapSource AppIcon
         {
@@ -36,8 +33,16 @@ namespace Win11Style.WindowChrome
                 if (icon == null)
                 {
                     var path = Process.GetCurrentProcess().MainModule.FileName;
-                    var ico = Icon.ExtractAssociatedIcon(path);
-                    icon = Imaging.CreateBitmapSourceFromHIcon(ico.Handle, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                    ushort index = 0;
+                    var hIcon = ExtractAssociatedIcon(IntPtr.Zero, new StringBuilder(path, 260), ref index);
+                    try
+                    {
+                        icon = Imaging.CreateBitmapSourceFromHIcon(hIcon, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                    }
+                    finally
+                    {
+                        DestroyIcon(hIcon);
+                    }
                 }
                 return icon;
             }
